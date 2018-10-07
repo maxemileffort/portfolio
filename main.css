@@ -1,0 +1,211 @@
+* {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    font-size: 100%;
+    /*The box-sizing property is used to tell the browser what the sizing properties (width and height) should include border-box.*/
+    box-sizing: border-box;
+    /*reset Chrome user agent styles*/
+    -webkit-margin-before: 0px;
+    -webkit-margin-after: 0px;
+    -webkit-margin-start: 0px;
+    -webkit-margin-end: 0px;
+    -webkit-padding-before: 0px;
+    -webkit-padding-after: 0px;
+    -webkit-padding-start: 0px;
+    -webkit-padding-end: 0px;
+}
+
+.hidden{
+    display: none !important;
+}
+
+html {
+    --main-bg-color: #105187;
+    --secondary-bg-color: #2C8693;
+    --main-text-color: #F0F1D5;
+    --link-hover-color: #F19722;
+    --link-color: #C33325;
+}
+
+body{
+    font-family: 'Open Sans', sans-serif;
+    color: var(--main-text-color);
+    background-image: 
+    linear-gradient(
+        rgba(0,0,0,0.5),
+        rgba(0,0,0,0.5)
+        ),
+        url('./img/serene.jpg');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-position: center, center;
+}
+
+.hero{
+    height: 1050px;
+    width: 100%;
+}
+    
+.title, .tagline, .arrow{
+    position: absolute;
+    width: 100%;
+    text-align: center;
+}
+
+.title{
+    top: 50%;
+}
+
+.tagline{
+    top: 55%;
+}
+
+.arrow{
+    font-size: 3em;
+    top: 90%; 
+}
+
+.fa-angle-down{
+    cursor: pointer;
+}
+
+a{
+    color: var(--link-color);
+    text-decoration: none;
+}
+
+a:hover{
+    color: var(--link-hover-color);
+}
+
+h1, h2{
+    font-family: 'Ubuntu', sans-serif;
+    font-size: 2.5em;
+}
+
+main{
+    width: 100%;
+    margin: 0 auto;
+}
+
+section{
+    width: 100%;
+}
+
+.sticky-arrow {
+    position: fixed;
+    top: 50%;
+    font-size: 3em;
+    cursor: pointer;
+    z-index: 1000;
+    color: var(--link-color)
+}
+
+.fa-angle-left{
+    left: 295px;
+}
+
+.about-me{
+    height: 500px;
+}
+
+.projects{
+    height: 500px;
+    
+}
+
+.contact-me{
+    height: 500px;
+
+}
+
+div{
+    width: 80%;
+    margin: auto;
+}
+
+.primary-bg{
+    background-color: var(--main-bg-color);
+}
+
+.secondary-bg{
+    background-color: var(--secondary-bg-color);
+}
+
+.navbar{
+    background-color: var(--main-text-color);
+    color: var(--main-bg-color);
+    height: 100%;
+    position: fixed;
+    width: 320px;
+}
+
+.logo{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    font-size: 1.5em;
+}
+
+.nav-item-list{
+    width: 30%;
+    list-style: none;
+    margin: 10% auto;
+}
+
+.nav-item{
+    margin: 5%;
+}
+
+footer{
+    width: 100%;
+    text-align: center;
+}
+
+.contact-info-list{
+    display: flex;
+    text-align: center;
+}
+
+.contact-info{
+    margin: 0 10px;
+    font-size: 2em;
+}
+
+/* for varying widths */
+@media all and (max-width:1024px) {}
+@media all and (max-width:768px) {}
+@media all and (max-width:480px) {}
+@media all and (max-width:320px) {}
+
+/* for varying heights, mostly just to 
+move the arrow on the hero up and down */
+@media all and (max-height:768px) {
+    .arrow{
+        top: 80%;
+    }
+    .title{
+        top: 30%;
+    }
+    .tagline{
+        top: 35%;
+    }
+    .hero{
+        height: 768px;
+    }
+}
+
+@media all and (max-height:480px) {
+    .arrow{
+        top: 50%;
+    }
+    .title{
+        top: 20%;
+    }
+    .tagline{
+        top: 25%;
+    }
+}
