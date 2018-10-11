@@ -21,27 +21,27 @@
         </div>
         <ul class='nav-item-list'>
             <li class="nav-item">
-                <a href="#" >
+                <a href="#" class="nav-link">
                     About
                 </a>
             </li>
             <li class="nav-item">
-                <a href="#" >
+                <a href="#" class="nav-link">
+                    Skillset
+                </a>
+            </li>
+            <li class="nav-item">
+                <a href="#" class="nav-link">
                     Projects
                 </a>
             </li>
             <li class="nav-item">
-                <a href="#" >
+                <a href="#" class="nav-link">
                     Contact
                 </a>
             </li>
             <li class="nav-item">
-                <a href="#" >
-                    GitHub
-                </a>
-            </li>
-            <li class="nav-item">
-                <a href="#" >
+                <a href="#" class="nav-link">
                     Resume
                 </a>
             </li>
@@ -58,21 +58,71 @@
     </header>
 
     <main role="main">
-        <section role="region" class="secondary-bg about-me">
-            <div>
-                Info goes here
+        <section role="region" class="secondary-bg about">
+            <div class='center-content'>
+                <img class="about-pic" src="./img/placeholder.png" alt="placeholder"/>
+                <p>"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."</p>
+                <p>"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."</p>
+                <p>"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."</p>
             </div>
         </section>
-        <section role="region" class="primary-bg projects">
-            <div>
-                Projects go here
+        <section role="region" class="primary-bg skillset">
+            <div class='center-content'>
+                <ul class="skills">
+                    <li class="skill-item">HTML</li>
+                    <li class="skill-item">CSS</li>
+                    <li class="skill-item">Javascript</li>
+                    <li class="skill-item">jQuery</li>
+                    <li class="skill-item">React</li>
+                    <li class="skill-item">Node</li>
+                    <li class="skill-item">Express</li>
+                    <li class="skill-item">MongoDB</li>
+                </ul>
+                <ul class="skills">
+                    <li class="skill-item">Docker</li>
+                    <li class="skill-item">Mocha</li>
+                    <li class="skill-item">Chai</li>
+                    <li class="skill-item">Enzyme</li>
+                    <li class="skill-item">R</li>
+                    <li class="skill-item">Python</li>
+                    <li class="skill-item">Django</li>
+                </ul>
             </div>
         </section>
-        <section role="region" class="secondary-bg contact-me">
-            <div>
-                Contact form? or something interactive, like a game maybe?
-            </div>
-        </section>
+        <section role="region" class="secondary-bg projects">
+                <div class='center-content projects'>
+                    <div class="project-item">
+                        <div class="project-tile"><img class="about-pic" src="./img/placeholder.png" alt="placeholder"/></div>
+                        <div class="project-description">
+                            <h2>Receip-It</h2>
+                            <h4>Receipt Parser</h4>
+                            <p>Description</p>
+                            <p>Description</p>
+                            <p>Description</p>
+                        </div>
+                    </div>
+                    <div class="project-item">
+                        <div class="project-tile"><img class="about-pic" src="./img/placeholder.png" alt="placeholder"/></div>
+                        <div class="project-description">
+                            <h2>Writing Center Check In</h2>
+                            <h4>Intranet App for Local School</h4>
+                            <p>Description</p>
+                            <p>Description</p>
+                            <p>Description</p>
+                        </div>
+                    </div>
+                    <div class="project-item">
+                        <div class="project-tile"><img class="about-pic" src="./img/placeholder.png" alt="placeholder"/></div>
+                        <div class="project-description">
+                            <h2>Winner Winner Chicken Dinner</h2>
+                            <h4>DFS Analytics</h4>
+                            <p>Description</p>
+                            <p>Description</p>
+                            <p>Description</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
     </main>
 
     <footer role="contentinfo" class="primary-bg">
@@ -88,12 +138,12 @@
                 <a href="https://fontawesome.com/license/free" target="_blank">(License)</a>
             </div>
         </section>
-        <section class="contact-info-list">
+        <section class="contact-info-list contact">
             <div class="contact-info">
-                <p>Contact: </p>
+                <span>Contact:</span>
             </div>
             <div class="contact-info">
-                <a href="mailto:maxemileffort@gmail.com?subject=Hello" target="_blank" aria-label="Email Max">
+                <a href="mailto:maxemileffort@gmail.com?subject=Hello">
                     <i aria-hidden class="fas fa-envelope" title="Email">
                     </i>
                 </a>

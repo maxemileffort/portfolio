@@ -95,18 +95,14 @@ section{
 .fa-angle-left{
     left: 295px;
 }
-.about-me{
-    height: 500px;
+.about{
+    height: auto;
 }
 .projects{
-    height: 500px;
+    height: auto;
 }
-.contact-me{
-    height: 500px;
-}
-div{
-    width: 80%;
-    margin: auto;
+.skillset{
+    height: auto;
 }
 .primary-bg{
     background-color: var(--main-bg-color);
@@ -114,6 +110,7 @@ div{
 .secondary-bg{
     background-color: var(--secondary-bg-color);
 }
+
 .navbar{
     background-color: var(--main-text-color);
     color: var(--main-bg-color);
@@ -121,20 +118,71 @@ div{
     position: fixed;
     width: 320px;
 }
+.nav-item{
+    margin: 5%;
+}
 .logo{
     width: 100%;
     display: flex;
     flex-direction: column;
     justify-content: center;
     font-size: 1.5em;
+    margin: 102% 0 0 0;
+    text-align: center;
 }
 .nav-item-list{
     width: 30%;
     list-style: none;
     margin: 10% auto;
 }
-.nav-item{
-    margin: 5%;
+
+.center-content{
+    width:80%;
+    height: auto;
+    margin: auto;
+}
+.about-pic{
+    width: 300px;
+    height: auto;
+    float: left;
+    margin: 10px;
+    border-radius: 18px;
+}
+p{
+    padding: 10px 0;
+}
+ul{
+    display: flex;
+    flex-wrap: wrap;
+}
+li{
+    list-style: none;
+    margin: 15px;
+    border: 1px solid var(--secondary-bg-color);
+    padding: 10px;
+    width: 100px;
+}
+.skills{
+    margin: 0 auto;
+    text-align: center;
+    justify-content: center;
+}
+.projects{
+    display: flex;
+    flex-direction: column;
+}
+.project-item{
+    display: flex;
+}
+.project-tile{
+    width: 500px;
+    height: auto;
+    float: left;
+    margin: 10px;
+    border-radius: 18px;
+}
+.project-description{
+    margin: 10px;
 }
 footer{
     width: 100%;
@@ -162,7 +210,7 @@ footer{
 move the arrow on the hero up and down */
 @media all and (max-height:768px) {
     .arrow{
-        top: 80%;
+        top: 92%;
     }
     .title{
         top: 30%;
@@ -176,12 +224,12 @@ move the arrow on the hero up and down */
 }
 @media all and (max-height:480px) {
     .arrow{
-        top: 50%;
+        top: 87%;
     }
     .title{
-        top: 20%;
+        top: 25%;
     }
     .tagline{
-        top: 25%;
+        top: 35%;
     }
 }
