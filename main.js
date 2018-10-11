@@ -6,6 +6,8 @@ $(".fa-angle-down").on('click', function(){
     }, 1000);
 })
 
+// bounce menu arrow 2 sec after page renders
+
 // show menu
 $(".fa-angle-right").on('click', function(){
     $(".fa-angle-right").addClass('hidden');

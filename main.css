@@ -56,7 +56,7 @@ body{
 }
 .arrow{
     font-size: 3em;
-    top: 90%; 
+    top: 93%; 
 }
 .fa-angle-down{
     cursor: pointer;
@@ -70,7 +70,12 @@ a:hover{
 }
 h1, h2{
     font-family: 'Ubuntu', sans-serif;
+}
+h1{
     font-size: 2.5em;
+}
+h2{
+    font-size: 1.5em;
 }
 main{
     width: 100%;
@@ -133,14 +138,17 @@ div{
 }
 footer{
     width: 100%;
-    text-align: center;
+    display: flex;
+}
+.credit-item{
+    margin: 10px;
 }
 .contact-info-list{
     display: flex;
-    text-align: center;
+    flex-basis: 20%;
 }
 .contact-info{
-    margin: 0 10px;
+    margin: 35px;
     font-size: 2em;
 }
 
