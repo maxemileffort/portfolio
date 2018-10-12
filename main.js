@@ -6,7 +6,7 @@ $(".fa-angle-down").on('click', function(){
     }, 1000);
 })
 
-// bounce menu arrow 2 sec after page renders
+// bounce menu arrow 0.2 sec after page renders
 // first, create function that animates the bounce
 const bounceMenuArrow = ()=>{
     $(".fa-angle-right").animate({
@@ -55,12 +55,21 @@ $(".fa-angle-left").on('click', function(){
 $('.nav-link').on('click', function(e){
     let text = e.target.outerText.toLowerCase();
     hideMenu();
-    console.log(text);
+    // console.log(text);
     if (document.querySelector(`.${text}`)){
         e.preventDefault();
         $([document.documentElement, document.body]).animate({
             scrollTop: $(`.${text}`).offset().top
         }, 1000);
+        if (text==='contact'){
+            $(".contact").animate({
+                backgroundColor: 'var(--secondary-bg-color)'
+            }, 200, 'swing', function(){
+                $(".contact").animate({
+                    backgroundColor: 'var(--main-bg-color)'
+                }, 200)
+            })
+        }
     } else {
         return false
     }
