@@ -50,9 +50,11 @@ body{
 }
 .title{
     top: 50%;
+    z-index: -1;
 }
 .tagline{
     top: 55%;
+    z-index: -1;
 }
 .arrow{
     font-size: 3em;
@@ -110,7 +112,6 @@ section{
 .secondary-bg{
     background-color: var(--secondary-bg-color);
 }
-
 .navbar{
     background-color: var(--main-text-color);
     color: var(--main-bg-color);
@@ -120,6 +121,9 @@ section{
 }
 .nav-item{
     margin: 5%;
+}
+.nav-link{
+    z-index: 1000;
 }
 .logo{
     width: 100%;
@@ -133,17 +137,15 @@ section{
 .nav-item-list{
     width: 30%;
     list-style: none;
-    margin: 10% auto;
+    margin: 3% auto;
 }
-
 .center-content{
     width:80%;
     height: auto;
     margin: auto;
 }
-.about-pic{
+.about-pic, .project-pic{
     width: 300px;
-    height: auto;
     float: left;
     margin: 10px;
     border-radius: 18px;
@@ -173,16 +175,20 @@ li{
 }
 .project-item{
     display: flex;
+    height: auto;
+    margin: 0 15%;
+    width: 100%;
 }
 .project-tile{
-    width: 500px;
+    width: 300px;
     height: auto;
     float: left;
     margin: 10px;
     border-radius: 18px;
 }
 .project-description{
-    margin: 10px;
+    margin: auto 5%;
+    height: auto;
 }
 footer{
     width: 100%;

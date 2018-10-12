@@ -29,17 +29,24 @@ $(document).ready(function(){
 })
 
 // show menu
-$(".fa-angle-right").on('click', function(){
+const showMenu = ()=>{
     $(".fa-angle-right").addClass('hidden');
     $(".fa-angle-left").removeClass('hidden');
-    $('.navbar').removeClass('hidden')
+    $('.navbar').removeClass('hidden');
+}
+$(".fa-angle-right").on('click', function(){
+    showMenu();
 })
 
 // hide menu
-$(".fa-angle-left").on('click', function(){
+const hideMenu = ()=>{
     $(".fa-angle-left").addClass('hidden');
     $(".fa-angle-right").removeClass('hidden');
-    $('.navbar').addClass('hidden')
+    $('.navbar').addClass('hidden');
+    setTimeout(bounceMenuArrow, 500);
+}
+$(".fa-angle-left").on('click', function(){
+    hideMenu();
 })
 
 // sidebar link behavior - needs to take you to the sections of page
@@ -47,7 +54,8 @@ $(".fa-angle-left").on('click', function(){
 // needs to redirect to the google doc
 $('.nav-link').on('click', function(e){
     let text = e.target.outerText.toLowerCase();
-    // console.log(text);
+    hideMenu();
+    console.log(text);
     if (document.querySelector(`.${text}`)){
         e.preventDefault();
         $([document.documentElement, document.body]).animate({
