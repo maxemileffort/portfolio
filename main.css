@@ -40,7 +40,7 @@ body{
     background-position: center, center;
 }
 .hero{
-    height: 1050px;
+    height: 1100px;
     width: 100%;
 }
 .title, .tagline, .arrow{
@@ -240,6 +240,9 @@ move the arrow on the hero up and down */
     }
 }
 @media all and (max-height:480px) {
+    .hero{
+        height: 480px;
+    }
     .arrow{
         top: 87%;
     }

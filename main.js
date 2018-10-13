@@ -10,22 +10,34 @@ $(".fa-angle-down").on('click', function(){
 // first, create function that animates the bounce
 const bounceMenuArrow = ()=>{
     $(".fa-angle-right").animate({
-        left: "50px",
         fontSize: "6em",
+        left: "50px",
         top: '48%'
     }, 200, 'swing', function(){
         $(".fa-angle-right").animate({
-            left: "0",
             fontSize: "3em",
+            left: "0",
             top: '50%'
         }, 200)
     })
 }
 
-// create trigger for the bounce
+// bounce bottom arrow
+const bounceBottomArrow = ()=>{
+    $(".arrow").animate({
+        top: '91%'
+    }, 200, 'swing', function(){
+        $(".arrow").animate({
+            top: '93%'
+        }, 200)
+    })
+}
+
+// create trigger for the arrows to bounce
 $(document).ready(function(){
-    setTimeout(bounceMenuArrow, 500);
-    setTimeout(bounceMenuArrow, 910);
+    setTimeout(bounceMenuArrow, 1000);
+    setTimeout(bounceMenuArrow, 1400);
+    setInterval(bounceBottomArrow, 600);
 })
 
 // show menu
@@ -43,11 +55,21 @@ const hideMenu = ()=>{
     $(".fa-angle-left").addClass('hidden');
     $(".fa-angle-right").removeClass('hidden');
     $('.navbar').addClass('hidden');
-    setTimeout(bounceMenuArrow, 500);
 }
 $(".fa-angle-left").on('click', function(){
     hideMenu();
 })
+
+// animate contact section to draw attention to it
+const flashContact = ()=>{
+    $(".contact").animate({
+        fontSize: '1.5em'
+    }, 200, 'swing', function(){
+        $(".contact").animate({
+            fontSize: '1em'
+        }, 200)
+    })
+}
 
 // sidebar link behavior - needs to take you to the sections of page
 // that correspond to the links, unless you click resume, then it just
@@ -62,13 +84,7 @@ $('.nav-link').on('click', function(e){
             scrollTop: $(`.${text}`).offset().top
         }, 1000);
         if (text==='contact'){
-            $(".contact").animate({
-                backgroundColor: 'var(--secondary-bg-color)'
-            }, 200, 'swing', function(){
-                $(".contact").animate({
-                    backgroundColor: 'var(--main-bg-color)'
-                }, 200)
-            })
+            setTimeout(flashContact, 1250)
         }
     } else {
         return false
