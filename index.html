@@ -14,8 +14,11 @@
     <title>Woody The Dev</title>
 </head>
 <body>
-    <nav role="region" class="navbar hidden">
-        <div class="logo nav-item">
+    <nav role="region" class="navbar">
+        <div class="hamburger-menu">
+            <p><i class="fas fa-bars"></i> Menu</p>
+        </div>
+        <div class="logo">
             <h4>Max Wood</h4>
             <h4>a.k.a Woody the Dev</h4>
         </div>
@@ -47,8 +50,6 @@
             </li>
         </ul>
     </nav>
-    <i class="fas fa-angle-right sticky-arrow"></i>
-    <i class="fas fa-angle-left sticky-arrow hidden"></i>
     <header role="banner">
         <section class="hero">
             <h1 class="title">Woody the Dev</h1>
@@ -56,7 +57,7 @@
             <p class="arrow"><i class="fas fa-angle-down"></i></p>
         </section>
     </header>
-
+    
     <main role="main">
         <section role="region" class="secondary-bg about">
             <div class='center-content about-me'>
@@ -69,7 +70,7 @@
                 <p>I've been programming now since November of 2017. I've mostly focused on Web Development, but I've also dabbled a bit in data science and even a little robotics. Take a look at my projects, and if you're interested, give those contact buttons at the bottom some love!</p>
             </div>
         </section>
-        <section role="region" class="primary-bg skillset-section">
+        <section role="region" class="primary-bg skillset">
             <div class='center-content'>
                 <h2 class="section-title">Skillset:</h2>
                 <ul class="skills">
@@ -210,7 +211,7 @@
             </div> <!-- end projects -->
         </section>
     </main>
-
+    
     <footer role="contentinfo" class="primary-bg">
         <section class="credits">
             <div class="credit-item">
@@ -248,9 +249,9 @@
             </div>
         </section>
     </footer>
-
+    
     <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
-        crossorigin="anonymous"></script>
+    crossorigin="anonymous"></script>
     <script src="./main.js"></script>
     
 </body>

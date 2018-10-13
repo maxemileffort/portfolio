@@ -15,9 +15,6 @@
     -webkit-padding-start: 0px;
     -webkit-padding-end: 0px;
 }
-.hidden{
-    display: none !important;
-}
 html{
     --main-bg-color: #173B21;
     --secondary-bg-color: #092517;
@@ -96,17 +93,6 @@ section{
     text-align: center;
     width: 100%;
 }
-.sticky-arrow{
-    position: fixed;
-    top: 50%;
-    font-size: 3em;
-    cursor: pointer;
-    z-index: 1000;
-    color: var(--link-color);
-}
-.fa-angle-left{
-    left: 295px;
-}
 .about{
     height: auto;
 }
@@ -126,30 +112,30 @@ section{
 .navbar{
     background-color: var(--main-text-color);
     color: var(--main-bg-color);
-    height: 100%;
-    position: fixed;
-    width: 320px;
-    z-index: 2;
-}
-.nav-item{
-    margin: 5%;
-}
-.nav-link{
-    z-index: 1000;
-}
-.logo{
+    height: 80px;
     width: 100%;
+    position: fixed;
     display: flex;
-    flex-direction: column;
-    justify-content: center;
-    font-size: 1.5em;
-    margin: 102% 0 0 0;
-    text-align: center;
+    justify-content: space-between;
+    z-index: 10;
+}
+.hamburger-menu{
+    display: none;
 }
 .nav-item-list{
-    width: 30%;
-    list-style: none;
-    margin: 10% auto;
+    display: flex;
+}
+.nav-item{
+    display: flex;
+    justify-content: center;
+}
+.nav-link{
+    align-self: center;
+}
+.logo{
+    font-size: 1.5em;
+    padding: 10px;
+    cursor: pointer;
 }
 .about-pic{
     width: 300px;
@@ -212,6 +198,7 @@ li{
 footer{
     width: 100%;
     display: flex;
+    justify-content: space-between;
 }
 .credit-item{
     margin: 10px;
@@ -237,6 +224,28 @@ footer{
     .project-description{
         text-align: center;
         width: 80%;
+    }
+    .logo{
+        width: 100%;
+        text-align: center;
+        display: none;
+    }
+    .navbar{
+        flex-direction: column;
+        align-items: center;
+        height: 80px;
+        justify-content: normal;
+    }
+    .hamburger-menu{
+        display: block;
+        cursor: pointer;
+        margin: 15px auto;
+        font-size: 1.5em;
+    }
+    .nav-item-list{
+        display: none;
+        flex-direction: column;
+        flex-wrap: nowrap;
     }
 }
 @media all and (max-width:768px) {
@@ -275,7 +284,7 @@ footer{
         justify-content: center;
     }
     .contact-info{
-        margin: 0 0;
+        margin: 0 10px;
         padding: 0 0;
     }
 }
@@ -295,7 +304,9 @@ footer{
     
 }
 @media all and (max-width:320px) {
-    
+    .hero{
+        height: 500px;
+    }
 }
 
 /* for varying heights, mostly just to 

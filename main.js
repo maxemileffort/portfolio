@@ -1,64 +1,26 @@
+let height = $(window).height();
+let expanded = false;
+
 // click the arrow down on the hero to scroll down to 
 // the first section
 $(".fa-angle-down").on('click', function(){
     $([document.documentElement, document.body]).animate({
-        scrollTop: $(".about").offset().top
+        scrollTop: $(".about").offset().top - 80
     }, 1000);
 })
 
-// bounce menu arrow 0.2 sec after page renders
-// first, create function that animates the bounce
-const bounceMenuArrow = ()=>{
-    $(".fa-angle-right").animate({
-        fontSize: "6em",
-        left: "50px",
-        top: '48%'
-    }, 200, 'swing', function(){
-        $(".fa-angle-right").animate({
-            fontSize: "3em",
-            left: "0",
-            top: '50%'
-        }, 200)
-    })
-}
-
 // bounce bottom arrow
 const bounceBottomArrow = ()=>{
+    let start = height-70;
+    $('.arrow').css({'top': `${start}px`} );
     $(".arrow").animate({
-        top: '91%'
+        top: `${start+15}px`
     }, 200, 'swing', function(){
         $(".arrow").animate({
-            top: '93%'
+            top: `${start}px`
         }, 200)
     })
 }
-
-// create trigger for the arrows to bounce
-$(document).ready(function(){
-    setTimeout(bounceMenuArrow, 1000);
-    setTimeout(bounceMenuArrow, 1400);
-    setInterval(bounceBottomArrow, 600);
-})
-
-// show menu
-const showMenu = ()=>{
-    $(".fa-angle-right").addClass('hidden');
-    $(".fa-angle-left").removeClass('hidden');
-    $('.navbar').removeClass('hidden');
-}
-$(".fa-angle-right").on('click', function(){
-    showMenu();
-})
-
-// hide menu
-const hideMenu = ()=>{
-    $(".fa-angle-left").addClass('hidden');
-    $(".fa-angle-right").removeClass('hidden');
-    $('.navbar').addClass('hidden');
-}
-$(".fa-angle-left").on('click', function(){
-    hideMenu();
-})
 
 // animate contact section to draw attention to it
 const flashContact = ()=>{
@@ -71,22 +33,105 @@ const flashContact = ()=>{
     })
 }
 
-// sidebar link behavior - needs to take you to the sections of page
+// check window size and render navbar accordingly
+// this is a redundant check, due to how the jquery manipulates css
+// for the hamburger menu
+const checkWindow = ()=>{
+    let mediaQuery = '(max-width:1024px)';
+    let windowWidth = window.matchMedia(mediaQuery);
+    if (!windowWidth.matches){
+        $('.logo').css({'display': 'block'} );
+        $('.nav-item-list').css({'display': 'flex'} );
+        return
+    }
+    if (windowWidth.matches){
+        $('.logo').css({'display': 'none'} );
+        $('.nav-item-list').css({'display': 'none'} );
+        return
+    }
+}
+
+// resize hero image dynamically to avoid weird spaces
+// between arrow and next section
+const resizeHero = ()=>{
+    height = $(window).height();
+    $('.hero').css({'height': height+'px'} );
+    checkWindow();
+}
+
+window.onresize = resizeHero;
+
+// create trigger for the arrow to bounce
+$(document).ready(function(){
+    setInterval(bounceBottomArrow, 1500);
+    resizeHero();
+})
+
+// expand menu
+$('.hamburger-menu').on('click', function(){
+    // if menu is collapsed, expand it
+    if(!expanded){
+        expanded = true
+        $('.hamburger-menu').html('<p><i class="fas fa-window-close"></i> Close</p>');
+        $('.logo').css({'display': 'block'} );
+        $('.nav-item-list').css({'display': 'flex'} );
+        $('.navbar').animate({
+            height: '475px'
+        }, 100);
+        return
+    }
+    // if menu is expanded, collapse it
+    if(expanded){
+        expanded = false
+        $('.hamburger-menu').html('<p><i class="fas fa-bars"></i> Menu</p>');
+        $('.logo').css({'display': 'none'} );
+        $('.nav-item-list').css({'display': 'none'} );
+        $('.navbar').animate({
+            height: '80px'
+        }, 100);
+        return
+    }
+})
+
+// navbar link behavior - needs to take you to the sections of page
 // that correspond to the links, unless you click resume, then it just
 // needs to redirect to the google doc
 $('.nav-link').on('click', function(e){
     let text = e.target.outerText.toLowerCase();
-    hideMenu();
     // console.log(text);
     if (document.querySelector(`.${text}`)){
         e.preventDefault();
         $([document.documentElement, document.body]).animate({
-            scrollTop: $(`.${text}`).offset().top
+            scrollTop: $(`.${text}`).offset().top - 80
         }, 1000);
         if (text==='contact'){
             setTimeout(flashContact, 1250)
         }
+        if(expanded){
+            expanded = false
+            $('.hamburger-menu').html('<p><i class="fas fa-bars"></i> Menu</p>');
+            $('.logo').css({'display': 'none'} );
+            $('.nav-item-list').css({'display': 'none'} );
+            $('.navbar').animate({
+                height: '80px'
+            }, 100);
+        }
     } else {
         return false
     }
+})
+
+// scroll to the top if the logo is clicked
+$('.logo').on('click', function(){
+        $([document.documentElement, document.body]).animate({
+            scrollTop: $(`.hero`).offset().top
+        }, 500);
+        expanded = false
+        $('.hamburger-menu').html('<p><i class="fas fa-bars"></i> Menu</p>');
+        $('.logo').css({'display': 'none'} );
+        $('.nav-item-list').css({'display': 'none'} );
+        $('.navbar').animate({
+            height: '80px'
+        }, 100);
+        return
 })
