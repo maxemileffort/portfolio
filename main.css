@@ -85,6 +85,12 @@ main{
 }
 section{
     width: 100%;
+    padding: 20px 0;
+}
+.center-content{
+    width:60%;
+    height: auto;
+    margin: auto;
 }
 .section-title{
     text-align: center;
@@ -106,6 +112,7 @@ section{
 }
 .projects{
     height: auto;
+    width: 75%;
 }
 .skillset{
     height: auto;
@@ -144,12 +151,7 @@ section{
     list-style: none;
     margin: 10% auto;
 }
-.center-content{
-    width:60%;
-    height: auto;
-    margin: auto;
-}
-.about-pic, .project-pic{
+.about-pic{
     width: 300px;
     float: left;
     margin: 10px;
@@ -185,21 +187,27 @@ li{
 }
 .project-item{
     display: flex;
-    height: auto;
-    margin: 0 0 0 15%;
+    margin: 10px auto;
     width: 80%;
+    justify-content: space-evenly;
 }
 .project-tile{
     width: 300px;
-    height: auto;
     float: left;
-    margin: 10px;
+    border-radius: 18px;
+}
+.project-pic{
+    height: 100%;
+    width: 100%;
     border-radius: 18px;
 }
 .project-description{
     margin: auto 5%;
     height: auto;
-    width: auto;
+    width: 40%;
+}
+.description{
+    width: 100%;
 }
 footer{
     width: 100%;
@@ -218,25 +226,92 @@ footer{
 }
 
 /* for varying widths */
-@media all and (max-width:1024px) {}
-@media all and (max-width:768px) {}
-@media all and (max-width:480px) {}
-@media all and (max-width:320px) {}
+@media all and (max-width:1024px) {
+    .projects, .project-item{
+        display: flex;
+        flex-direction: column;
+        margin:10px auto;
+        padding: 15px 0;
+        align-items: center;
+    }
+    .project-description{
+        text-align: center;
+        width: 80%;
+    }
+}
+@media all and (max-width:768px) {
+    .about-me{
+        display: flex;
+        flex-direction: column;
+        max-height: 400px;
+        overflow: hidden scroll;
+    }
+    .skills{
+        max-height: 400px;
+        overflow: hidden scroll;
+    }
+    .projects, .project-item{
+        display: flex;
+        flex-direction: column;
+        margin:0 auto;
+    }
+    .about-pic{
+        float: none;
+        margin: 1% auto;
+        text-align: center;
+    }
+    footer{
+        flex-direction: column;
+    }
+    .credits{
+        text-align: center;
+        margin: 0;
+        padding: 0;
+    }
+    .contact-info-list{
+        width: 100%;
+        margin: 0 auto;
+        display: flex;
+        justify-content: center;
+    }
+    .contact-info{
+        margin: 0 0;
+        padding: 0 0;
+    }
+}
+@media all and (max-width:580px) {
+    .about-pic{
+        width: 200px;
+        height: auto;
+        margin: 1% auto;
+    }
+    .project-tile{
+        width: 200px;
+        margin: 10px auto;
+    }
+    .project-description{
+        width: 100%;
+    }
+    
+}
+@media all and (max-width:320px) {
+    
+}
 
 /* for varying heights, mostly just to 
 move the arrow on the hero up and down */
 @media all and (max-height:768px) {
     .arrow{
-        top: 92%;
+        top: 89%;
     }
     .title{
         top: 30%;
     }
     .tagline{
-        top: 35%;
+        top: 40%;
     }
     .hero{
-        height: 768px;
+        height: 500px;
     }
 }
 @media all and (max-height:480px) {

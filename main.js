@@ -63,7 +63,7 @@ $(".fa-angle-left").on('click', function(){
 // animate contact section to draw attention to it
 const flashContact = ()=>{
     $(".contact").animate({
-        fontSize: '1.5em'
+        fontSize: '1.2em'
     }, 200, 'swing', function(){
         $(".contact").animate({
             fontSize: '1em'
