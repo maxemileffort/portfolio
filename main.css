@@ -24,6 +24,7 @@ html{
     overflow: hidden scroll;
 }
 body{
+    overflow: hidden scroll;
     font-family: 'Open Sans', sans-serif;
     color: var(--main-text-color);
     background-image: 
