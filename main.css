@@ -14,6 +14,8 @@
     -webkit-padding-after: 0px;
     -webkit-padding-start: 0px;
     -webkit-padding-end: 0px;
+    -webkit-overflow-scrolling: touch;
+
 }
 html{
     --main-bg-color: #173B21;
@@ -254,12 +256,10 @@ footer{
         flex-direction: column;
         max-height: 400px;
         overflow-y: auto;
-        -webkit-overflow-scrolling: touch;
     }
     .skills{
         max-height: 400px;
         overflow-y: auto;
-        -webkit-overflow-scrolling: touch;
     }
     .projects, .project-item{
         display: flex;
