@@ -253,12 +253,12 @@ footer{
         display: flex;
         flex-direction: column;
         max-height: 400px;
-        overflow-y: scroll;
+        overflow-y: auto;
         -webkit-overflow-scrolling: touch;
     }
     .skills{
         max-height: 400px;
-        overflow-y: scroll;
+        overflow-y: auto;
         -webkit-overflow-scrolling: touch;
     }
     .projects, .project-item{
