@@ -1,4 +1,5 @@
 let height = $(window).height();
+let width = $(window).width();
 let expanded = false;
 
 // click the arrow down on the hero to scroll down to 
@@ -24,13 +25,24 @@ const bounceBottomArrow = ()=>{
 
 // animate contact section to draw attention to it
 const flashContact = ()=>{
-    $(".contact").animate({
-        fontSize: '1.2em'
-    }, 200, 'swing', function(){
+    // console.log(width)
+    if(width<768){
         $(".contact").animate({
-            fontSize: '1em'
-        }, 200)
-    })
+            fontSize: '0.8em'
+        }, 200, 'swing', function(){
+            $(".contact").animate({
+                fontSize: '1em'
+            }, 200)
+        })
+    } else {
+        $(".contact").animate({
+            fontSize: '1.2em'
+        }, 200, 'swing', function(){
+            $(".contact").animate({
+                fontSize: '1em'
+            }, 200)
+        }) 
+    }
 }
 
 // check window size and render navbar accordingly
