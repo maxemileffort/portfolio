@@ -21,6 +21,7 @@ html{
     --main-text-color: #C1BDC0;
     --link-hover-color: #8E6A4A;
     --link-color: #C33325;
+    overflow: hidden scroll;
 }
 body{
     font-family: 'Open Sans', sans-serif;
