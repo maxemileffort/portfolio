@@ -26,6 +26,8 @@ const bounceBottomArrow = ()=>{
 // animate contact section to draw attention to it
 const flashContact = ()=>{
     // console.log(width)
+    // if the screen is small, like a tablet or phone,
+    // instead of blowing up the contact info, shrink it first
     if(width<768){
         $(".contact").animate({
             fontSize: '0.8em'
@@ -67,7 +69,9 @@ const checkWindow = ()=>{
 // between arrow and next section
 const resizeHero = ()=>{
     height = $(window).height();
-    $('.hero').css({'height': height+'px'} );
+    $('.hero').css({'height': height+'px'});
+    $('.title').css({'bottom': '45%'});
+    $('.tagline').css({'bottom': '40%'});
     checkWindow();
 }
 

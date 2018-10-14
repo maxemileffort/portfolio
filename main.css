@@ -47,11 +47,9 @@ body{
     text-align: center;
 }
 .title{
-    top: 50%;
     z-index: -1;
 }
 .tagline{
-    top: 55%;
     z-index: -1;
 }
 .arrow{
@@ -305,39 +303,21 @@ footer{
     }
     
 }
-@media all and (max-width:320px) {
-    .hero{
-        height: 500px;
-    }
-}
-
 /* for varying heights, mostly just to 
-move the arrow on the hero up and down */
-@media all and (max-height:768px) {
-    .arrow{
-        top: 89%;
-    }
+move the banner on the hero up and down */
+/* @media all and (max-height:768px) {
     .title{
         top: 30%;
     }
     .tagline{
         top: 40%;
     }
-    .hero{
-        height: 500px;
-    }
 }
 @media all and (max-height:480px) {
-    .hero{
-        height: 480px;
-    }
-    .arrow{
-        top: 87%;
-    }
     .title{
         top: 25%;
     }
     .tagline{
         top: 35%;
     }
-}
+} */
