@@ -142,12 +142,14 @@ $('.logo').on('click', function(){
         $([document.documentElement, document.body]).animate({
             scrollTop: $(`.hero`).offset().top
         }, 500);
-        expanded = false
+        if(expanded){
+            expanded = false
         $('.hamburger-menu').html('<p><i class="fas fa-bars"></i> Menu</p>');
         $('.logo').css({'display': 'none'} );
         $('.nav-item-list').css({'display': 'none'} );
         $('.navbar').animate({
             height: '80px'
         }, 100);
+        }
         return
 })
