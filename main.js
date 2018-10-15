@@ -23,28 +23,52 @@ const bounceBottomArrow = ()=>{
     })
 }
 
+const getMobileOperatingSystem = ()=>{
+    let userAgent = navigator.userAgent || navigator.vendor || window.opera;
+        // Windows Phone must come first because its UA also contains "Android"
+      if (/windows phone/i.test(userAgent)) {
+          return "Windows Phone";
+      }
+      if (/android/i.test(userAgent)) {
+          return "Android";
+      }
+      // iOS detection from: http://stackoverflow.com/a/9039885/177710
+      if (/iPad|iPhone|iPod/.test(userAgent) && !window.MSStream) {
+          return "iOS";
+      }
+      return "unknown";
+  }
+
 // animate contact section to draw attention to it
 const flashContact = ()=>{
     // console.log(width)
+    // jQuery animate doesn't do well with iOS, so for now,
+    // check for it and disable it if user is using Apple device
+    let userOS = getMobileOperatingSystem();
     // if the screen is small, like a tablet or phone,
     // instead of blowing up the contact info, shrink it first
-    if(width<1024){
-        $(".contact").animate({
-            fontSize: '0.8em'
-        }, 200, 'swing', function(){
+    if (userOS !== 'iOS'){
+        if(width<1024){
             $(".contact").animate({
-                fontSize: '1em'
-            }, 200)
-        })
-    } else {
-        $(".contact").animate({
-            fontSize: '1.5em'
-        }, 200, 'swing', function(){
+                fontSize: '0.8em'
+            }, 200, 'swing', function(){
+                $(".contact").animate({
+                    fontSize: '1em'
+                }, 200)
+            })
+            return 
+        } else {
             $(".contact").animate({
-                fontSize: '1em'
-            }, 200)
-        }) 
+                fontSize: '1.5em'
+            }, 200, 'swing', function(){
+                $(".contact").animate({
+                    fontSize: '1em'
+                }, 200)
+            }) 
+            return
+        }
     }
+    return 
 }
 
 // check window size and render navbar accordingly
