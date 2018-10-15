@@ -2,6 +2,8 @@ let height = $(window).height();
 let width = $(window).width();
 let expanded = false;
 
+
+
 // click the arrow down on the hero to scroll down to 
 // the first section
 $(".fa-angle-down").on('click', function(){
@@ -37,14 +39,16 @@ const getMobileOperatingSystem = ()=>{
           return "iOS";
       }
       return "unknown";
-  }
+}
+
+// jQuery .animate() doesn't do well with iOS, so for now,
+// check for it and disable it if user is using Apple device
+let userOS = getMobileOperatingSystem();
 
 // animate contact section to draw attention to it
 const flashContact = ()=>{
     // console.log(width)
-    // jQuery animate doesn't do well with iOS, so for now,
-    // check for it and disable it if user is using Apple device
-    let userOS = getMobileOperatingSystem();
+    
     // if the screen is small, like a tablet or phone,
     // instead of blowing up the contact info, shrink it first
     if (userOS !== 'iOS'){
@@ -94,11 +98,22 @@ const checkWindow = ()=>{
 const resizeHero = ()=>{
     height = $(window).height();
     width = $(window).width();
-    $('.hero').css({'height': height+'px'});
-    $('.title').css({'bottom': '45%'});
-    $('.tagline').css({'bottom': '40%'});
-    $('.contact-btn').css({'bottom': '30%'});
-    checkWindow();
+    if (userOS !== 'iOS'){
+        $('.hero').css({'height': height+'px'});
+        $('.title').css({'bottom': '45%'});
+        $('.tagline').css({'bottom': '40%'});
+        $('.contact-btn').css({'bottom': '30%'});
+        checkWindow();
+        return
+    } else {
+        $('.hero').css({'height': height+'px'});
+        $('.title').css({'bottom': '45%'});
+        $('.tagline').css({'bottom': '35%'});
+        $('.contact-btn').css({'bottom': '25%'});
+        checkWindow();
+        return
+    }
+    
 }
 
 window.onresize = resizeHero;
