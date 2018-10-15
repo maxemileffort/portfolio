@@ -40,10 +40,13 @@ body{
 .hero{
     height: 1100px;
     width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;     /* vertical */
+    justify-content: center; /* horizontal */
 }
 .title, .tagline, .arrow{
     position: absolute;
-    width: 100%;
     text-align: center;
 }
 .title{
@@ -51,6 +54,19 @@ body{
 }
 .tagline{
     z-index: -1;
+}
+.contact-btn{
+    position: absolute;
+    cursor: pointer;
+    width: 300px;
+    height: 60px;
+    border-radius: 20px;
+    font-size: 2em;
+    color: var(--link-color);
+    background-color: var(--main-text-color)
+}
+.diff-color{
+    color: var(--link-hover-color);
 }
 .arrow{
     font-size: 3em;
@@ -132,12 +148,15 @@ section{
     align-self: center;
 }
 .logo{
-    font-size: 1.5em;
+    font-size: 2em;
     padding: 10px;
     cursor: pointer;
+    margin: auto 0;
+    font-family: 'Caveat', cursive;
 }
 .about-pic{
     width: 300px;
+    height: 100%;
     float: left;
     margin: 10px;
     border-radius: 18px;
@@ -154,7 +173,7 @@ li{
     margin: 15px;
     border: 1px solid var(--secondary-bg-color);
     padding: 10px;
-    width: 100px;
+    width: auto;
 }
 .skills{
     margin: 0 auto;
@@ -163,7 +182,7 @@ li{
 }
 .icon{
     height: 60px;
-    width: 80px;
+    width: auto;
     border-radius: 2px;
 }
 .projects{
@@ -173,23 +192,24 @@ li{
 .project-item{
     display: flex;
     margin: 10px auto;
-    width: 80%;
+    width: 100%;
     justify-content: space-evenly;
 }
 .project-tile{
-    width: 300px;
-    float: left;
+    width: 50%;
     border-radius: 18px;
+    background-color:#000;
 }
 .project-pic{
     height: 100%;
     width: 100%;
     border-radius: 18px;
+    opacity:1;
 }
 .project-description{
     margin: auto 5%;
     height: auto;
-    width: 40%;
+    width: 50%;
 }
 .description{
     width: 100%;
@@ -210,7 +230,6 @@ footer{
     margin: 35px;
     font-size: 2em;
 }
-
 /* for varying widths */
 @media all and (max-width:1024px) {
     .projects, .project-item{
@@ -228,6 +247,7 @@ footer{
         width: 100%;
         text-align: center;
         display: none;
+        
     }
     .navbar{
         flex-direction: column;
@@ -295,29 +315,10 @@ footer{
         margin: 1% auto;
     }
     .project-tile{
-        width: 200px;
+        width: 50%;
         margin: 10px auto;
     }
     .project-description{
         width: 100%;
     }
-    
 }
-/* for varying heights, mostly just to 
-move the banner on the hero up and down */
-/* @media all and (max-height:768px) {
-    .title{
-        top: 30%;
-    }
-    .tagline{
-        top: 40%;
-    }
-}
-@media all and (max-height:480px) {
-    .title{
-        top: 25%;
-    }
-    .tagline{
-        top: 35%;
-    }
-} */

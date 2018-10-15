@@ -38,7 +38,7 @@ const flashContact = ()=>{
         })
     } else {
         $(".contact").animate({
-            fontSize: '1.2em'
+            fontSize: '1.5em'
         }, 200, 'swing', function(){
             $(".contact").animate({
                 fontSize: '1em'
@@ -72,6 +72,7 @@ const resizeHero = ()=>{
     $('.hero').css({'height': height+'px'});
     $('.title').css({'bottom': '45%'});
     $('.tagline').css({'bottom': '40%'});
+    $('.contact-btn').css({'bottom': '30%'});
     checkWindow();
 }
 
@@ -137,6 +138,14 @@ $('.nav-link').on('click', function(e){
     }
 })
 
+// user clicks contact button
+$('.contact-btn').on('click', function(){
+    $([document.documentElement, document.body]).animate({
+        scrollTop: $(`.contact`).offset().top - 80
+    }, 1000);
+    setTimeout(flashContact, 1250)
+})
+
 // scroll to the top if the logo is clicked
 $('.logo').on('click', function(){
         $([document.documentElement, document.body]).animate({
@@ -152,4 +161,15 @@ $('.logo').on('click', function(){
         }, 100);
         }
         return
+})
+
+// when user hovers over project-tile, a new message appears
+$('.project-pic').hover(function(e){
+    let element = e.currentTarget;
+    $(element).css({'opacity': '0.5'});
+    $(element).siblings('.view-app').css({'display': 'block'});
+}, function(e){
+    let element = e.currentTarget;
+    $(element).css({'opacity': '1'});
+    $(element).siblings('.view-app').css({'display': 'none'});
 })
