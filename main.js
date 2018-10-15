@@ -2,8 +2,6 @@ let height = $(window).height();
 let width = $(window).width();
 let expanded = false;
 
-
-
 // click the arrow down on the hero to scroll down to 
 // the first section
 $(".fa-angle-down").on('click', function(){
@@ -94,26 +92,22 @@ const checkWindow = ()=>{
 }
 
 // resize hero image dynamically to avoid weird spaces
-// between arrow and next section
+// between arrow and next section. Also repositions text
+// in hero image
 const resizeHero = ()=>{
     height = $(window).height();
     width = $(window).width();
+    $('.hero').css({'height': height+'px'});
+    $('.title').css({'bottom': '45%'});
     if (userOS !== 'iOS'){
-        $('.hero').css({'height': height+'px'});
-        $('.title').css({'bottom': '45%'});
         $('.tagline').css({'bottom': '40%'});
         $('.contact-btn').css({'bottom': '30%'});
-        checkWindow();
-        return
     } else {
-        $('.hero').css({'height': height+'px'});
-        $('.title').css({'bottom': '45%'});
         $('.tagline').css({'bottom': '35%'});
         $('.contact-btn').css({'bottom': '25%'});
-        checkWindow();
-        return
     }
-    
+    checkWindow();
+    return
 }
 
 window.onresize = resizeHero;
