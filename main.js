@@ -28,7 +28,7 @@ const flashContact = ()=>{
     // console.log(width)
     // if the screen is small, like a tablet or phone,
     // instead of blowing up the contact info, shrink it first
-    if(width<768){
+    if(width<1024){
         $(".contact").animate({
             fontSize: '0.8em'
         }, 200, 'swing', function(){
@@ -69,6 +69,7 @@ const checkWindow = ()=>{
 // between arrow and next section
 const resizeHero = ()=>{
     height = $(window).height();
+    width = $(window).width();
     $('.hero').css({'height': height+'px'});
     $('.title').css({'bottom': '45%'});
     $('.tagline').css({'bottom': '40%'});
