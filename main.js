@@ -201,9 +201,7 @@ $('.logo').on('click', function(){
 $('.project-pic').hover(function(e){
     let element = e.currentTarget;
     $(element).css({'opacity': '0.5'});
-    $(element).siblings('.view-app').css({'display': 'block'});
 }, function(e){
     let element = e.currentTarget;
     $(element).css({'opacity': '1'});
-    $(element).siblings('.view-app').css({'display': 'none'});
 })
