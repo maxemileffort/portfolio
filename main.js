@@ -150,8 +150,8 @@ $('.hamburger-menu').on('click', function(){
 $('.nav-link').on('click', function(e){
     let text = e.target.outerText.toLowerCase();
     // console.log(text);
+    e.preventDefault();
     if (document.querySelector(`.${text}`)){
-        e.preventDefault();
         $([document.documentElement, document.body]).animate({
             scrollTop: $(`.${text}`).offset().top - 80
         }, 1000);
