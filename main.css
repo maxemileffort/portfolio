@@ -107,6 +107,7 @@ section{
 .section-title{
     text-align: center;
     width: 100%;
+    margin-bottom: 1%;
 }
 .about{
     height: auto;
@@ -190,7 +191,7 @@ li{
 }
 .project-item{
     display: flex;
-    margin: 10px auto;
+    margin: 4% auto;
     width: 100%;
     justify-content: space-evenly;
 }
@@ -209,6 +210,14 @@ li{
     margin: auto 5%;
     height: auto;
     width: 50%;
+}
+.project-btn{
+    display: inline-block;
+    text-align: center;
+    background-color: var(--main-text-color);
+    width: 80px;
+    height: 30px;
+    padding: 5px 5px 5px 5px;
 }
 .description{
     width: 100%;

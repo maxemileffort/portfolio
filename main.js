@@ -119,7 +119,8 @@ $(document).ready(function(){
 })
 
 // expand menu
-$('.hamburger-menu').on('click', function(){
+$('.hamburger-menu').on('click', function(e){
+    console.log(e)
     // if menu is collapsed, expand it
     if(!expanded){
         expanded = true
@@ -149,7 +150,6 @@ $('.hamburger-menu').on('click', function(){
 // needs to redirect to the google doc
 $('.nav-link').on('click', function(e){
     e.preventDefault();
-    console.log(e)
     let text = e.target.innerText.toLowerCase();
     // console.log(text);
     if (document.querySelector(`.${text}`)){
@@ -174,7 +174,8 @@ $('.nav-link').on('click', function(e){
 })
 
 // user clicks contact button
-$('.contact-btn').on('click', function(){
+$('.contact-btn').on('click', function(e){
+    e.preventDefault();
     $([document.documentElement, document.body]).animate({
         scrollTop: $(`.contact`).offset().top - 80
     }, 1000);
@@ -182,24 +183,26 @@ $('.contact-btn').on('click', function(){
 })
 
 // scroll to the top if the logo is clicked
-$('.logo').on('click', function(){
-        $([document.documentElement, document.body]).animate({
-            scrollTop: $(`.hero`).offset().top
-        }, 500);
-        if(expanded){
-            expanded = false
-        $('.hamburger-menu').html('<p><i class="fas fa-bars"></i> Menu</p>');
-        $('.logo').css({'display': 'none'} );
-        $('.nav-item-list').css({'display': 'none'} );
-        $('.navbar').animate({
-            height: '80px'
-        }, 100);
-        }
-        return
+$('.logo').on('click', function(e){
+    e.preventDefault();
+    $([document.documentElement, document.body]).animate({
+        scrollTop: $(`.hero`).offset().top
+    }, 500);
+    if(expanded){
+        expanded = false
+    $('.hamburger-menu').html('<p><i class="fas fa-bars"></i> Menu</p>');
+    $('.logo').css({'display': 'none'} );
+    $('.nav-item-list').css({'display': 'none'} );
+    $('.navbar').animate({
+        height: '80px'
+    }, 100);
+    }
+    return
 })
 
 // when user hovers over project-tile, a new message appears
 $('.project-pic').hover(function(e){
+    e.preventDefault();
     let element = e.currentTarget;
     $(element).css({'opacity': '0.5'});
 }, function(e){
