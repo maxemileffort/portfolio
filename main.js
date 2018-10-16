@@ -148,9 +148,10 @@ $('.hamburger-menu').on('click', function(){
 // that correspond to the links, unless you click resume, then it just
 // needs to redirect to the google doc
 $('.nav-link').on('click', function(e){
-    let text = e.target.outerText.toLowerCase();
-    // console.log(text);
     e.preventDefault();
+    console.log(e)
+    let text = e.target.innerText.toLowerCase();
+    // console.log(text);
     if (document.querySelector(`.${text}`)){
         $([document.documentElement, document.body]).animate({
             scrollTop: $(`.${text}`).offset().top - 80
