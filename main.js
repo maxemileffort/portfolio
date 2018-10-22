@@ -120,7 +120,7 @@ $(document).ready(function(){
 
 // expand menu
 $('.hamburger-menu').on('click', function(e){
-    console.log(e)
+    // console.log(e)
     // if menu is collapsed, expand it
     if(!expanded){
         expanded = true
@@ -149,10 +149,12 @@ $('.hamburger-menu').on('click', function(e){
 // that correspond to the links, unless you click resume, then it just
 // needs to redirect to the google doc
 $('.nav-link').on('click', function(e){
-    e.preventDefault();
+    // console.log(e.target)
     let text = e.target.innerText.toLowerCase();
     // console.log(text);
     if (document.querySelector(`.${text}`)){
+        // console.log('found an element ' + text )
+        e.preventDefault();
         $([document.documentElement, document.body]).animate({
             scrollTop: $(`.${text}`).offset().top - 80
         }, 1000);
@@ -168,9 +170,7 @@ $('.nav-link').on('click', function(e){
                 height: '80px'
             }, 100);
         }
-    } else {
-        return false
-    }
+    } 
 })
 
 // user clicks contact button
