@@ -209,3 +209,8 @@ $('.project-pic').hover(function(e){
     let element = e.currentTarget;
     $(element).css({'opacity': '1'});
 })
+
+// prevent automatic scroll to top when unlinked img is clicked
+$('#ping-pong-img').on("click", function(e){
+    e.preventDefault();
+})
