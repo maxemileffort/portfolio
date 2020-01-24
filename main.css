@@ -20,8 +20,9 @@ html{
     --main-bg-color: #173B21;
     --secondary-bg-color: #092517;
     --main-text-color: #C1BDC0;
-    --link-hover-color: #8E6A4A;
-    --link-color: #C33325;
+    --link-hover-color: #555;
+    --link-color: #FFF;
+    --button-color: #F19722;
 }
 body{
     font-family: 'Open Sans', sans-serif;
@@ -43,7 +44,7 @@ body{
     display: flex;
     flex-direction: column;
     align-items: center;     /* vertical */
-    justify-content: center; /* horizontal */
+    justify-content: space-evenly /* horizontal */
 }
 .title, .tagline, .arrow{
     position: absolute;
@@ -63,7 +64,7 @@ body{
     border-radius: 20px;
     font-size: 2em;
     color: var(--link-color);
-    background-color: var(--main-text-color)
+    background-color: var(--button-color)
 }
 .diff-color{
     color: var(--link-hover-color);
@@ -126,7 +127,7 @@ section{
     background-color: var(--secondary-bg-color);
 }
 .navbar{
-    background-color: var(--main-text-color);
+    background-color: var(--button-color);
     color: var(--main-bg-color);
     height: 80px;
     width: 100%;
@@ -214,10 +215,11 @@ li{
 .project-btn{
     display: inline-block;
     text-align: center;
-    background-color: var(--main-text-color);
+    background-color: var(--button-color);
     width: 80px;
     height: 30px;
     padding: 5px 5px 5px 5px;
+    border-radius: 5px;
 }
 .description{
     width: 100%;
@@ -237,6 +239,9 @@ footer{
 .contact-info{
     margin: 35px;
     font-size: 2em;
+}
+a.contact-link{
+    color: var(--button-color);
 }
 /* for varying widths */
 @media all and (max-width:1024px) {
